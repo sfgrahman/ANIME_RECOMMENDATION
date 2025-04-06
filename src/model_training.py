@@ -14,7 +14,7 @@ class ModelTraining:
     def __init__(self, data_path):
         self.data_path = data_path
         self.experiment = comet_ml.Experiment(
-            api_key="",
+            api_key="PR7Bj3RxVLIip6tNxrrOPgRvJ",
             project_name="anime-recomendation",
             workspace="sfgrahman"
         )
