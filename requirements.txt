@@ -1,0 +1,10 @@
+pandas
+numpy
+setuptools
+boto3
+pyyaml
+tensorflow
+joblib
+scikit-learn
+comet-ml
+dvc

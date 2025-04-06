@@ -1,0 +1,24 @@
+2025-04-05 21:08:59,643 - INFO - Data processing initialized
+2025-04-05 21:09:02,038 - INFO - Data loaded successfully for Data processing
+2025-04-05 21:09:02,380 - INFO - Filtered users sucesfully...
+2025-04-05 21:09:04,486 - INFO - Scalind done for Processing 
+2025-04-05 21:09:04,761 - INFO - Encoding done for Users and Anime
+2025-04-05 21:09:05,656 - INFO - Data splitted sucesfullyy
+2025-04-05 21:09:05,683 - INFO - user2user_encoded saved sucesfully in processed directory
+2025-04-05 21:09:05,706 - INFO - user2user_decoded saved sucesfully in processed directory
+2025-04-05 21:09:05,804 - INFO - anim2anime_encoded saved sucesfully in processed directory
+2025-04-05 21:09:05,900 - INFO - anim2anime_decoded saved sucesfully in processed directory
+2025-04-05 21:09:15,046 - INFO - ALl the training testing data as well as rating_df is saved now..
+2025-04-05 21:09:38,622 - INFO - DF AND SYNOPSIS_Df saved sucesfullyy...
+2025-04-05 21:09:38,627 - INFO - Data Processing Pipeline Run sucesfully .... Congrats
+2025-04-05 23:42:55,550 - INFO - Model training initialized
+2025-04-05 23:42:56,053 - INFO - Data loaded successfully for Model training
+2025-04-05 23:42:56,175 - INFO - Successfully read the YAML file
+2025-04-05 23:42:56,175 - INFO - loaded configuration from config.yaml
+2025-04-05 23:42:56,820 - INFO - Model created successfully
+2025-04-05 23:45:08,627 - INFO - Model training completed ...
+2025-04-05 23:45:08,628 - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-04-05 23:45:08,760 - INFO - Model saved to artifacts/model\model.h5
+2025-04-05 23:45:08,786 - INFO - Extracting weights for anime_embedding
+2025-04-05 23:45:08,792 - INFO - Extracting weights for user_embedding
+2025-04-05 23:45:08,813 - INFO - User and Anime weights saved sucessfully..
