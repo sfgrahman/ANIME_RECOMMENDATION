@@ -2,7 +2,7 @@
     remote = minio-remote
 ['remote "minio-remote"']
     url = s3://dvc-data
-    endpointurl = http://127.0.0.1:9000
+    endpointurl = http://host.docker.internal:9000
     access_key_id = minioadmin
     secret_access_key = minioadmin
     use_ssl = false

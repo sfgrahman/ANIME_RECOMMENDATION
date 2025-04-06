@@ -7,6 +7,6 @@ tensorflow
 joblib
 scikit-learn
 comet-ml
-dvc
+#dvc
 dvc-s3
 flask

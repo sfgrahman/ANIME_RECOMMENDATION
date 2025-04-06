@@ -41,6 +41,45 @@ pipeline{
             }
 
     
+        stage('Build and Push Image to DockerHub') {
+                steps {
+                    withCredentials([usernamePassword(credentialsId: 'jenkins-test',
+                                                    usernameVariable: 'DOCKERHUB_USERNAME',
+                                                    passwordVariable: 'DOCKERHUB_PASSWORD')]) {
+                        script {
+                            echo 'Build and Push Image to Docker Hub'
+
+                            sh '''
+                            echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+
+                            docker build -t $DOCKERHUB_USERNAME/anime-recommendation:latest .
+
+                            docker push $DOCKERHUB_USERNAME/anime-recommendation:latest
+
+                            docker logout
+                            '''
+                        }
+                    }
+                }
+            }
+
+
+        stage('Deploying to Kubernetes'){
+            steps{
+                withCredentials([file(credentialsId:'gcp-key' , variable: 'GOOGLE_APPLICATION_CREDENTIALS' )]){
+                    script{
+                        echo 'Deploying to Kubernetes'
+                        sh '''
+                        export PATH=$PATH:${GCLOUD_PATH}:${KUBECTL_AUTH_PLUGIN}
+                        gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}
+                        gcloud config set project ${GCP_PROJECT}
+                        gcloud container clusters get-credentials ml-app-cluster --region us-central1
+                        kubectl apply -f deployment.yaml
+                        '''
+                    }
+                }
+            }
         
+        }
     }
 }
